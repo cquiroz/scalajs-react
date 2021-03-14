@@ -165,7 +165,7 @@ object ScalajsReact {
     .aggregate(
       core, extra, test, /*testModule,*/
       cats, catsEffect, scalaz72,
-      monocleCats, monocle3, monocleScalaz,
+      monocle, monocleCats, monocle3, monocleScalaz,
       ghpagesMacros, ghpages)
     .configure(commonSettings, preventPublication, hasNoTests)
 
@@ -231,6 +231,13 @@ object ScalajsReact {
         libraryDependencies ++= Seq(
           Dep.ScalazEffect72.value,
           Dep.KindProjector))
+
+  lazy val monocle = project
+    .in(file("monocle"))
+    .configure(commonSettings, publicationSettings, extModuleName("monocle"), hasNoTests)
+    .dependsOn(core, extra, scalaz72)
+    .settings(
+      libraryDependencies += "com.github.julien-truffaut" %%% "monocle-core" % Ver.MonocleScalaz)
 
   lazy val monocleScalaz = project
     .in(file("monocle-scalaz"))

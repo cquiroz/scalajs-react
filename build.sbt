@@ -8,6 +8,7 @@ val root          = ScalajsReact.root
 val core          = ScalajsReact.core
 val extra         = ScalajsReact.extra
 val scalaz72      = ScalajsReact.scalaz72
+val monocle       = ScalajsReact.monocle
 val monocleScalaz = ScalajsReact.monocleScalaz
 val monocleCats   = ScalajsReact.monocleCats
 val monocle3      = ScalajsReact.monocle3
