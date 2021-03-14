@@ -237,7 +237,7 @@ object ScalajsReact {
     .configure(commonSettings, publicationSettings, extModuleName("monocle"), hasNoTests)
     .dependsOn(core, extra, scalaz72)
     .settings(
-      libraryDependencies += "com.github.julien-truffaut" %%% "monocle-core" % Ver.MonocleScalaz)
+      libraryDependencies += Dep.MonocleScalaz.value)
 
   lazy val monocleScalaz = project
     .in(file("monocle-scalaz"))
@@ -259,7 +259,7 @@ object ScalajsReact {
     .configure(commonSettings, publicationSettings, extModuleName("monocle3"), hasNoTests)
     .dependsOn(core, extra, cats)
     .settings(
-      libraryDependencies += "com.github.julien-truffaut" %%% "monocle-core" % Ver.Monocle3)
+      libraryDependencies += Dep.Monocle3.value)
 
   lazy val monocleCats = project
     .in(file("monocle-cats"))
